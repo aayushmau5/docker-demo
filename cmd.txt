@@ -1,0 +1,53 @@
+Some docker commands
+
+1. `docker ps -a` - Lists all the containers which are running and which previously ran
+2. `docker ps` - Lists all the currently running containers
+3. `docker container ls -a` - Lists all the containers which are running and which previously ran
+4. `docker container ls` - Lists all the currently running containers
+5. `docker run <image-name>` - (Old Syntax) Run a docker image locally
+6. `docker container run <image-name>` - (New Syntax) Run a docker image locally
+7. `docker container run --publish 8000:80 <image-name>` - Map the host port(8000) with container port(80)
+8. `docker container run --detach <image-name>` - Run in the background
+9. `docker container run --name <custom-container-name> <image-name>` - Start a container with custom name
+10. `docker container rename <container-identifier> <new-name>` - Rename an already running container (Identifier could be the container id or container name)
+11. `docker container stop <container-identifier>` - Stop a container
+12. `docker container kill <container-identifier>` - Kill a container
+13. `docker container start <container-identifier>` - Start any stopped or killed container.(In detached mode as well as retains the previous configs)
+14. `docker container restart <container-identifier>` - Restart any running container
+15. `docker container create --publish 8000:80 <image-name>` - Creates a container from the given image
+16. `docker container start <container-identifier>` - Start the container
+17. `docker container rm <container-identifier>` - Remove a dangling/stopped container
+18. `docker container prune` - Remove all dangling containers
+19. `docker container run --rm <image-name>` - `--rm` Remove the container as soon as it is stopped.
+20. `docker container start --rm <container-identifier>`
+21. `docker container run -it ubuntu` - Run a container in interactive mode.
+22. `docker container run <image-name> <command>` - Run a `command` in the container.
+23. `docker container run --rm -v <directory-on-filesystem>:<directory-inside-container> <image-name> <command>` - `-v` or `--volume` is used for creating a bind mount for a container
+24. `docker image build .` - Build an image from the current working directory(must have `Dockerfile` file)
+25. `docker image build --tag <image-repository>:<image-tag>` - Tag an image with name.
+26. `docker image tag <image-id> <image-respository>:<image-tag>` - Tag an existing image using the image id.
+27. `docker image tag <image-repository>:<image-tag> <new-image-repository>:<new-image-tag>` - Change tag of an exisiting image.
+28. `docker image ls` - List all the images in your local system.
+29. `docker image rm <image-identifier>` - Remove an image.
+30. `docker image prune` - Remove all images.
+31. `docker image history <image-identifier>` - Visualize the many layers of an image.
+32. `docker image pull <image-name>` - Pull a docker image from the registry
+33. `docker login` - Login using Dockerhub account
+34. `docker image push <image-repository>:<image-tag>` - Push a docker image to docker hub.
+35. `docker image build --file <custom-filename> --tag <image-repository>:<tag>` - Use `custom-filename` as our Dockerfile
+36. `docker container inspect --format='{{range .NetworkSetting.Networks}} {{.IPAddress}} {{end}}' <container-identifier>` - Finding the exact IP address of a container.
+37. `docker network ls` - List out the networks in your system.
+38. `docker network inspect --format='{{range .Containers}}{{.Name}}{{end}}' bridge` - Inspect the `bridge` network.(See all the containers using the bridge network).
+39. `docker network create <network-name>` - Create a user-defined network.
+40. `docker network connect <network-identifier> <container-identifier>` - Connect a container to a network.
+41. `docker container run --network <network-identifier> <container>` - Another way of connecting to the network.
+42. `docker network disconnect <network> <container>` - Disconnect a container from the network.
+43. `docker network rm <network>` - Remove a network.
+44. `docker volume create <volume-name>` - Create a named volume.
+45. `docker volume ls` - List all named volumes.
+46. `docker container logs <container>` - See the logs from a particular container.
+47. `docker container inspect <container>` - Inspect a docker container.
+48. `docker container exec <container-identifier> <command>` - Execute a command inside a running container.
+49. `docker container exec -it <container> <command>` - Run a command in interactive mode inside a running container.
+50. `docker-compose --file docker-compose.yaml up --detach` - Start the servies defined in `docker-compose.yaml` file.
+51. `docker-compose ps` - List all Service containers started by Compose.

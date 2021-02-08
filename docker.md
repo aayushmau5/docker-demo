@@ -55,7 +55,7 @@ docker --version
 docker-compose --version
 ```
 
-Docker book: (Book)[https://www.freecodecamp.org/news/the-docker-handbook]
+Docker book: [Book](https://www.freecodecamp.org/news/the-docker-handbook)
 
 ## Commands
 
